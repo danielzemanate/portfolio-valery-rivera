@@ -8,33 +8,33 @@ export const Home = () => {
         <div className="home__content grid">
           <div className="home__social">
             <a
-              href="https://www.linkedin.com/in/juan-daniel-diaz181997/?locale=en_US"
-              target="_blank"
+              href="https://www.linkedin.com/in/andersondanielzemanate/"
+              target="blank"
               className="home__social-icon"
             >
-              <i className="uil uil-linkedin-alt"></i>
+              <i className="fab fa-linkedin fa-lg"></i>
             </a>
 
             <a
-              href="https://www.instagram.com/juandaniel.pa/"
-              target="_blank"
+              href="https://www.instagram.com/danielzemanate/"
+              target="blank"
               className="home__social-icon"
             >
-              <i className="uil uil-instagram"></i>
+              <i className="fab fa-instagram fa-lg"></i>
             </a>
 
             <a
-              href="https://github.com/juandaniel-pa"
-              target="_blank"
+              href="https://github.com/danielzemanate"
+              target="blank"
               className="home__social-icon"
             >
-              <i className="uil uil-github-alt"></i>
+              <i className="fab fa-github fa-lg"></i>
             </a>
           </div>
           <div className="home__img">
             <img
               src={me} // Ajusta la ruta de la imagen según tu estructura de carpetas
-              alt="Huevo al revés"
+              alt="daniel"
               className="egg_image"
               style={{
                 borderRadius: "50% / 40% 40% 65% 65%",
@@ -48,19 +48,24 @@ export const Home = () => {
             <h1 className="home__title">Hi, I'm Daniel Zemanate</h1>
             <h3 className="home__subtitle">Full Stack Developer</h3>
             <p className="home__description">
-              I have experience in web design and development knowledge,
-              producing quality work.
+              I have experience in web design, REST API, and cloud services,
+              producing high-quality work.
             </p>
             <a href="#contact" className="button button--flex">
-              Contact me <i className="uil uil-telegram-alt button__icon"></i>
+              Contact me <i className="button__icon far fa-paper-plane"></i>
             </a>
           </div>
         </div>
         <div className="home__scroll">
           <a href="#about" className="home__scroll-button button--flex">
-            <i className="uil uil-mouse-alt home__scroll-mouse"></i>
-            <span className="home__scroll-name">Scroll down</span>
-            <i className="uil uil-arrow-down home__scroll-arrow"></i>
+            <i className="fas fa-mouse fa-xs home__scroll-mouse"></i>
+            <span
+              className="home__scroll-name"
+              style={{ marginLeft: 5, fontSize: 17 }}
+            >
+              Scroll down
+            </span>
+            <i className="fas fa-arrow-down fa-xs home__scroll-arrow"></i>
           </a>
         </div>
       </div>

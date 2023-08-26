@@ -1,5 +1,5 @@
 import React from "react";
-import  '../../assets/styles/styles.css';
+import "../../assets/styles/styles.css";
 
 export const Header = () => {
   return (
@@ -7,7 +7,12 @@ export const Header = () => {
       {/* HEADER */}
       <header className="header" id="header">
         <nav className="nav container">
-          <a href="https://juandaniel.netlify.app/" className="nav__logo">
+          <i className="fas fa-code home__social-icon"/>
+          <a
+            href="https://danielzemanate.netlify.app/"
+            className="nav__logo"
+            style={{ fontSize: 17 }}
+          >
             Daniel Zemanate
           </a>
 

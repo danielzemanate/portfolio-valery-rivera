@@ -1,5 +1,5 @@
 import React from "react";
-import me from '../../../assets/img/me2.jpg'
+import me from "../../../assets/img/me2.jpg";
 
 export const About = () => {
   return (
@@ -14,8 +14,10 @@ export const About = () => {
         />
         <div className="about__data">
           <p className="about__description">
-            Young man, with knowledge and passion, for web development, always
-            striving for deliver quality work.
+            Web developer with over 4 years of experience, involved in the
+            design, development, and testing of multiple web applications. I
+            consider myself a technology and learning enthusiast; there have
+            never been excuses to learn something new.
           </p>
           <div className="about__info">
             <div>
@@ -39,11 +41,11 @@ export const About = () => {
           </div>
           <div className="about__buttons">
             <a
-              download=""
-              href="./pdf/Resume-Juan_Diaz.pdf"
+              href="https://drive.google.com/file/d/1fvNWgIhBhjkgBxVepT3xvYm26SscrTSr/view?usp=drive_link"
               className="button button--flex"
+              target="blank"
             >
-              Download CV <i className="uil uil-import button__icon"></i>
+              Download CV <i className="fas fa-download button__icon"></i>
             </a>
           </div>
         </div>
