@@ -6,6 +6,8 @@ import { Skills } from "./components/skills/Skills";
 import { Qualification } from "./components/qualification/Qualification";
 import { Footer } from "./components/footer/Footer";
 import { Contact } from "./components/contact/Contact";
+import { FloatingWhatsAppButton } from "./components/buttons/whatsapp/FloatingWhatsAppButton";
+import { ScrollUpButton } from "./components/buttons/scrollTopButton/ScrollUpButton";
 
 function App() {
   return (
@@ -22,6 +24,10 @@ function App() {
       <Contact />
       {/* FOOTER */}
       <Footer />
+      {/* FLOAT BUTTON WHATSAPP */}
+      <FloatingWhatsAppButton />
+      {/* SCROLL UP BUTTON */}
+      <ScrollUpButton />
     </div>
   );
 }
