@@ -8,6 +8,7 @@ import { Footer } from "./components/footer/Footer";
 import { Contact } from "./components/contact/Contact";
 import { FloatingWhatsAppButton } from "./components/buttons/whatsapp/FloatingWhatsAppButton";
 import { ScrollUpButton } from "./components/buttons/scrollTopButton/ScrollUpButton";
+import { Services } from "./components/services/Services";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
       <Skills />
       {/* QUALIFICATION */}
       <Qualification />
+      {/* SERVICES */}
+      <Services />
       {/* CONTACT */}
       <Contact />
       {/* FOOTER */}

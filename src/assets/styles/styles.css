@@ -205,7 +205,8 @@ img {
 @media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;
-    bottom: -100%;
+     bottom: -100%;
+    /* top:10%; */
     left: 0;
     width: 100%;
     background-color: var(--body-color);
@@ -1358,7 +1359,7 @@ img {
 /* FloatingWhatsAppButton.css */
 .floating-whatsapp-button {
   position: fixed;
-  bottom: 50px;
+  bottom: 45px;
   left: 20px;
   /* background-color: #25d366; Color de fondo del botón */
   width: 60px;
@@ -1373,7 +1374,7 @@ img {
 }
 
 .whatsapp-icon {
-  width: 48px;
+  width: 50px;
   height: 50px;
 }
 
@@ -1385,7 +1386,7 @@ img {
 
 .floating-button {
   position: fixed;
-  bottom: 52px;
+  bottom: 48px;
   right: 20px;
   background-color: var(--first-color);
   color: #ffffff;

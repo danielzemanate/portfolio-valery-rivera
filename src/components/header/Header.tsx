@@ -12,6 +12,19 @@ export const Header = () => {
       } else {
         setScrolled(false);
       }
+      const sections = document.querySelectorAll("section[id]");
+      const scrollPosition = window.scrollY + 500; // Adjust for header height
+
+      sections.forEach((section: any, index: any) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (
+          scrollPosition >= sectionTop &&
+          scrollPosition < sectionTop + sectionHeight
+        ) {
+          setActiveLink(index);
+        }
+      });
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -24,6 +37,21 @@ export const Header = () => {
   const handleClickShowMenu = () => {
     setShowMenu(!showMenu);
   };
+
+  const [activeLink, setActiveLink] = useState(0); // Initialize the active link index
+
+  const handleLinkClick = (index: any) => {
+    setActiveLink(index); // Update the active link index when a link is clicked
+  };
+
+  const navItems = [
+    { text: "Home", icon: "fas fa-home", target: "home" },
+    { text: "About", icon: "far fa-user", target: "about" },
+    { text: "Skills", icon: "far fa-file-code", target: "skills" },
+    { text: "Services", icon: "fas fa-briefcase", target: "services" },
+    // { text: "Portfolio", icon: "fas fa-suitcase", target: "portfolio" },
+    { text: "Contact", icon: "fab fa-telegram-plane", target: "contact" },
+  ];
 
   return (
     <div>
@@ -44,41 +72,19 @@ export const Header = () => {
             id="nav-menu"
           >
             <ul className="nav__list grid">
-              <li className="nav__item">
-                <a href="#home" className="nav__link active-link">
-                  <i className="fas fa-home nav__icon"></i> Home
-                </a>
-              </li>
-
-              <li className="nav__item">
-                <a href="#about" className="nav__link">
-                  <i className="far fa-user nav__icon"></i> About
-                </a>
-              </li>
-
-              <li className="nav__item">
-                <a href="#skills" className="nav__link">
-                  <i className="far fa-file-code nav__icon"></i> Skills
-                </a>
-              </li>
-
-              <li className="nav__item">
-                <a href="#services" className="nav__link">
-                  <i className="fas fa-briefcase nav__icon"></i> Services
-                </a>
-              </li>
-
-              <li className="nav__item">
-                <a href="#portfolio" className="nav__link">
-                  <i className="fas fa-suitcase nav__icon"></i> Portfolio
-                </a>
-              </li>
-
-              <li className="nav__item">
-                <a href="#contact" className="nav__link">
-                  <i className="fab fa-telegram-plane nav__icon"></i> Contact
-                </a>
-              </li>
+              {navItems.map((item, index) => (
+                <li className="nav__item" key={index}>
+                  <a
+                    href={`#${item.target}`}
+                    className={`nav__link ${
+                      activeLink === index ? "active-link" : ""
+                    }`}
+                    onClick={() => handleLinkClick(index)}
+                  >
+                    <i className={`${item.icon} nav__icon`}></i> {item.text}
+                  </a>
+                </li>
+              ))}
             </ul>
             <i
               className="fas fa-times nav__close"
