@@ -1359,7 +1359,7 @@ img {
 /* FloatingWhatsAppButton.css */
 .floating-whatsapp-button {
   position: fixed;
-  bottom: 45px;
+  bottom: 50px;
   left: 20px;
   /* background-color: #25d366; Color de fondo del botón */
   width: 60px;
@@ -1386,7 +1386,7 @@ img {
 
 .floating-button {
   position: fixed;
-  bottom: 48px;
+  bottom: 50px;
   right: 20px;
   background-color: var(--first-color);
   color: #ffffff;
