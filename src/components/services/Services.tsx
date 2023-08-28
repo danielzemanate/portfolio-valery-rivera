@@ -1,34 +1,5 @@
 import React, { useState } from "react";
 
-interface ServiceItemProps {
-  text: string; // Cambia 'string' al tipo de dato correcto si no es una cadena de texto
-}
-const ServiceModal = () => (
-  <div className="services__modal">
-    <div className="services__modal-content">
-      <h4 className="services__modal-title">
-        Frontend <br />
-        Developer
-      </h4>
-      <i className="uil uil-times services__modal-close"></i>
-
-      <ul className="services__modal-services grid">
-        <ServiceItem text="I develop the user interface." />
-        <ServiceItem text="Web Page Development" />
-        <ServiceItem text="I give you digital presence, transforming your idea into code." />
-        <ServiceItem text="I help you sell without so much effort, 24/7 a day with an E-commerce website." />
-      </ul>
-    </div>
-  </div>
-);
-
-const ServiceItem: React.FC<ServiceItemProps> = ({ text }) => (
-  <li className="services__modal-service">
-    <i className="far fa-check-circle services__modal-icon"></i>
-    <p>{text}</p>
-  </li>
-);
-
 export const Services = () => {
   return (
     <section className="services section" id="services">
