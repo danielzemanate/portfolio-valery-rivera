@@ -199,21 +199,6 @@ img {
   color: var(--first-color);
 }
 
-@media screen and (max-width: 767px) {
-  .nav__menu {
-    position: fixed;
-    bottom: -100%;
-    /* top:10%; */
-    left: 0;
-    width: 100%;
-    background-color: var(--body-color);
-    padding: 2rem 1.5rem 4rem;
-    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 1.5rem 1.5rem 0 0;
-    transition: 0.3s;
-  }
-}
-
 .nav__list {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
@@ -2236,4 +2221,88 @@ img {
 .button:hover {
   transform: translateY(-2px);
   box-shadow: 0 22px 60px rgba(59, 130, 246, 0.28);
+}
+
+@media (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.08);
+    transition: right 0.3s ease;
+    padding: 4rem 2rem;
+    z-index: 1000;
+  }
+
+  .show-menu {
+    right: 0;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+/* ==================== FIX HEADER MOBILE (TOP) ==================== */
+@media screen and (max-width: 767px) {
+  body {
+    margin: 0; /* quita el espacio blanco inferior */
+  }
+
+  .header {
+    top: 0;
+    bottom: initial; /* ya no abajo */
+  }
+
+  /* opcional: para que el contenido no quede debajo del header */
+  .main {
+    padding-top: calc(var(--header-height) + 1.25rem);
+  }
+}
+
+/* ==================== MOBILE DRAWER MENU ==================== */
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 78%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-left: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: -14px 0 40px rgba(15, 23, 42, 0.12);
+    transition: right 0.3s ease;
+    padding: 5rem 1.5rem 1.5rem;
+    z-index: 1000;
+  }
+
+  .show-menu {
+    right: 0;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .nav__link {
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 10px;
+    padding: 0.85rem 0.9rem;
+  }
+
+  .nav__close {
+    top: 1.1rem;
+    right: 1.1rem;
+    bottom: initial;
+    position: absolute;
+  }
 }
