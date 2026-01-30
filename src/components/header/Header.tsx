@@ -60,7 +60,7 @@ export const Header = () => {
         <nav className="nav container">
           <i className="fas fa-user-md home__social-icon" />
           <a
-            href="https://dra.valeryrivera.netlify.app/"
+            href="https://dravaleryrivera.netlify.app/"
             className="nav__logo"
             style={{ fontSize: 17 }}
           >

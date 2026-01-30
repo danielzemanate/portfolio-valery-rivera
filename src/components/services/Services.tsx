@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export const Services = () => {
   return (
@@ -11,7 +11,7 @@ export const Services = () => {
       <div className="services__container container grid">
         <ConsultaPresencial />
         <Urgencias />
-        <APS_Rural />
+        <ApsRural />
       </div>
     </section>
   );
@@ -189,7 +189,7 @@ const Urgencias = () => {
 };
 
 /* ==================== 3) APS / RURAL ==================== */
-const APS_Rural = () => {
+const ApsRural = () => {
   const [open, setOpen] = useState(false);
   const toggle = () => setOpen((prev) => !prev);
 
