@@ -1,69 +1,105 @@
 import React from "react";
-import me from "../../../assets/img/me3.jpg";
+import me from "../../../assets/img/valery.jpg";
 
 export const Home = () => {
+  const whatsappUrl =
+    "https://wa.me/573113078792?text=Hola,%20quiero%20agendar%20una%20consulta%20médica";
+
   return (
     <section className="home section" id="home">
       <div className="home__container container grid">
         <div className="home__content grid">
+          {/* SOCIAL */}
           <div className="home__social">
             <a
-              href="https://www.linkedin.com/in/andersondanielzemanate/"
-              target="blank"
+              href="https://www.instagram.com/valeryrivera_/"
+              target="_blank"
+              rel="noreferrer"
               className="home__social-icon"
-            >
-              <i className="fab fa-linkedin fa-lg"></i>
-            </a>
-
-            <a
-              href="https://www.instagram.com/danielzemanate/"
-              target="blank"
-              className="home__social-icon"
+              aria-label="Instagram"
             >
               <i className="fab fa-instagram fa-lg"></i>
             </a>
 
             <a
-              href="https://github.com/danielzemanate"
-              target="blank"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
               className="home__social-icon"
+              aria-label="WhatsApp"
             >
-              <i className="fab fa-github fa-lg"></i>
+              <i className="fab fa-whatsapp fa-lg"></i>
+            </a>
+
+            <a
+              href="mailto:valeryju1020@gmail.com"
+              className="home__social-icon"
+              aria-label="Correo"
+            >
+              <i className="far fa-envelope fa-lg"></i>
             </a>
           </div>
+
+          {/* IMAGEN */}
           <div className="home__img">
             <img
-              src={me} // Ajusta la ruta de la imagen según tu estructura de carpetas
-              alt="daniel"
+              src={me}
+              alt="Dra. Valery Juliana Rivera López"
               className="egg_image"
               style={{
-                borderRadius: "50% / 40% 40% 65% 65%",
-                objectFit: "cover", // Esto asegura que la imagen cubra todo el espacio del óvalo
-                width: "230px", // Ajusta el ancho según tus necesidades
-                height: "300px", // Ajusta la altura según tus necesidades
+                objectFit: "cover",
+                width: "240px",
+                height: "320px",
               }}
             />
           </div>
+
+          {/* TEXTO */}
           <div className="home__data">
-            <h1 className="home__title">Hi, I'm Daniel Zemanate</h1>
-            <h3 className="home__subtitle">Full Stack Developer</h3>
+            <h1 className="home__title">Dra. Valery Juliana Rivera López</h1>
+
+            <h3 className="home__subtitle">
+              Médico General · APS · Urgencias · Atención rural
+            </h3>
+
             <p className="home__description">
-              I have experience in web design, REST API, and cloud services,
-              producing high-quality work.
+              Atención médica clara, resolutiva y basada en la confianza.
+              Experiencia en consulta externa, urgencias y Atención Primaria en
+              Salud (APS), incluyendo trabajo en zonas rurales y de difícil
+              acceso.
             </p>
-            <a href="#contact" className="button button--flex">
-              Contact me <i className="button__icon far fa-paper-plane"></i>
-            </a>
+
+            <div className="home__clinicBadges">
+              <span className="home__badge">APS (Atención Primaria)</span>
+              <span className="home__badge">Consulta externa</span>
+              <span className="home__badge">Urgencias</span>
+              <span className="home__badge">Rural y difícil acceso</span>
+            </div>
+
+            <div className="home__cta">
+              <a
+                href={whatsappUrl}
+                className="button button--flex"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Agendar cita <i className="fab fa-whatsapp button__icon"></i>
+              </a>
+
+              <a href="#services" className="button button--flex button--white">
+                Ver servicios{" "}
+                <i className="fas fa-arrow-right button__icon"></i>
+              </a>
+            </div>
           </div>
         </div>
+
+        {/* SCROLL */}
         <div className="home__scroll">
           <a href="#about" className="home__scroll-button button--flex">
             <i className="fas fa-mouse fa-xs home__scroll-mouse"></i>
-            <span
-              className="home__scroll-name"
-              style={{ marginLeft: 5, fontSize: 17 }}
-            >
-              Scroll down
+            <span className="home__scroll-name" style={{ marginLeft: 5 }}>
+              Desliza hacia abajo
             </span>
             <i className="fas fa-arrow-down fa-xs home__scroll-arrow"></i>
           </a>

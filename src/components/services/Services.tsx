@@ -3,286 +3,276 @@ import React, { useState } from "react";
 export const Services = () => {
   return (
     <section className="services section" id="services">
-      <h2 className="section__title">Services</h2>
-      <span className="section__subtitle">Let's Talk Business</span>
+      <h2 className="section__title">Servicios</h2>
+      <span className="section__subtitle">
+        Atención médica profesional, humana y resolutiva
+      </span>
+
       <div className="services__container container grid">
-        <FrontendSection />
-        <BackendSection />
-        <UiUxSection />
+        <ConsultaPresencial />
+        <Urgencias />
+        <APS_Rural />
       </div>
     </section>
   );
 };
 
-// FRONTEND SECTION
-const FrontendSection = () => {
-  const [flagFronted, setFlagFronted] = useState(false);
-  const openModal = () => {
-    setFlagFronted(!flagFronted);
-  };
+/* ==================== 1) CONSULTA PRESENCIAL ==================== */
+const ConsultaPresencial = () => {
+  const [open, setOpen] = useState(false);
+  const toggle = () => setOpen((prev) => !prev);
+
   return (
-    <>
-      <div className="services__content">
-        <i className="fas fa-code services__icon"></i>
-        <h3 className="services__title">
-          Frontend <br />
-          Developer
-        </h3>
+    <div className="services__content">
+      <i className="fas fa-clinic-medical services__icon"></i>
 
-        <span
-          className="button button--flex button--small button--link services__button"
-          onClick={openModal}
-        >
-          View More
-          <i className="fas fa-arrow-right button__icon"></i>
-        </span>
+      <h3 className="services__title">
+        Consulta <br />
+        presencial
+      </h3>
 
-        <div className={`services__modal ${flagFronted && "active-modal"}`}>
-          <div className="services__modal-content">
-            <h4 className="services__modal-title">
-              Frontend <br />
-              Developer
-            </h4>
-            <i
-              className="fas fa-times services__modal-close"
-              onClick={openModal}
-            ></i>
+      <span
+        className="button button--flex button--small button--link services__button"
+        onClick={toggle}
+      >
+        Ver más
+        <i className="fas fa-arrow-right button__icon"></i>
+      </span>
 
-            <ul className="services__modal-services grid">
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>
-                  User-Centric Interfaces: Crafting user interfaces that
-                  prioritize user experience, making sure they are intuitive and
-                  engaging.
-                </p>
-              </li>
+      <div className={`services__modal ${open ? "active-modal" : ""}`}>
+        <div className="services__modal-content">
+          <h4 className="services__modal-title">
+            Consulta <br />
+            presencial
+          </h4>
 
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>
-                  Design Implementation: Translating design concepts into
-                  pixel-perfect HTML, CSS, and JavaScript code, ensuring the
-                  visual fidelity matches the original designs.
-                </p>
-              </li>
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>
-                  Responsive Design: Developing layouts that adapt seamlessly to
-                  different devices and screen sizes, guaranteeing a consistent
-                  experience across platforms.
-                </p>
-              </li>
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>
-                  Performance Optimization: Enhancing loading times and overall
-                  site performance through code optimization and efficient
-                  resource management.
-                </p>
-              </li>
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>
-                  Interactive Elements: Incorporating dynamic elements and
-                  animations to create engaging user interactions and enhance
-                  the visual appeal.
-                </p>
-              </li>
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>
-                  Thorough Testing: Rigorously testing your projects across
-                  various browsers and devices to identify and address any
-                  compatibility issues.
-                </p>
-              </li>
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>
-                  Maintenance and Updates: Providing ongoing support, addressing
-                  bug fixes, and implementing updates to keep the frontend
-                  components current and functional.
-                </p>
-              </li>
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>
-                  Web Accessibility: Ensuring your projects are accessible to
-                  all users, including those with disabilities, by following
-                  accessibility guidelines and utilizing semantic HTML.
-                </p>
-              </li>
-            </ul>
-          </div>
+          <i
+            className="fas fa-times services__modal-close"
+            onClick={toggle}
+          ></i>
+
+          <ul className="services__modal-services grid">
+            <li className="services__modal-service">
+              <i className="far fa-check-circle services__modal-icon"></i>
+              <p>
+                Valoración clínica completa: motivo de consulta, antecedentes,
+                examen físico y orientación diagnóstica.
+              </p>
+            </li>
+
+            <li className="services__modal-service">
+              <i className="far fa-check-circle services__modal-icon"></i>
+              <p>
+                Manejo de síntomas frecuentes: fiebre, dolor, infecciones
+                respiratorias y gastrointestinales, alergias, entre otros.
+              </p>
+            </li>
+
+            <li className="services__modal-service">
+              <i className="far fa-check-circle services__modal-icon"></i>
+              <p>
+                Solicitud e interpretación de ayudas diagnósticas y definición
+                de conducta clínica según resultados.
+              </p>
+            </li>
+
+            <li className="services__modal-service">
+              <i className="far fa-check-circle services__modal-icon"></i>
+              <p>
+                Control y seguimiento: evolución clínica, ajustes de manejo y
+                plan de cuidado personalizado.
+              </p>
+            </li>
+
+            <li className="services__modal-service">
+              <i className="far fa-check-circle services__modal-icon"></i>
+              <p>
+                Educación al paciente y familia: señales de alarma, adherencia a
+                tratamientos y autocuidado.
+              </p>
+            </li>
+
+            <li className="services__modal-service">
+              <i className="far fa-check-circle services__modal-icon"></i>
+              <p>
+                Remisión oportuna a especialista cuando el caso lo requiere,
+                asegurando continuidad de la atención.
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-// BACKEND SECTION
-const BackendSection = () => {
-  const [flagBackend, setFlagBackend] = useState(false);
-  const openModal = () => {
-    setFlagBackend(!flagBackend);
-  };
+/* ==================== 2) URGENCIAS ==================== */
+const Urgencias = () => {
+  const [open, setOpen] = useState(false);
+  const toggle = () => setOpen((prev) => !prev);
+
   return (
-    <>
-      <div className="services__content">
-        <i className="fas fa-database services__icon"></i>
-        <h3 className="services__title">
-          Backend <br />
-          Developer
-        </h3>
+    <div className="services__content">
+      <i className="fas fa-ambulance services__icon"></i>
 
-        <span
-          className="button button--flex button--small button--link services__button"
-          onClick={openModal}
-        >
-          View More
-          <i className="fas fa-arrow-right button__icon"></i>
-        </span>
+      <h3 className="services__title">
+        Atención <br />
+        de urgencias
+      </h3>
 
-        <div className={`services__modal ${flagBackend && "active-modal"}`}>
-          <div className="services__modal-content">
-            <h4 className="services__modal-title">
-              Backend <br />
-              Developer
-            </h4>
-            <i
-              className="fas fa-times services__modal-close"
-              onClick={openModal}
-            ></i>
+      <span
+        className="button button--flex button--small button--link services__button"
+        onClick={toggle}
+      >
+        Ver más
+        <i className="fas fa-arrow-right button__icon"></i>
+      </span>
 
-            <ul className="services__modal-services grid">
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>
-                  API Development: Creating Application Programming Interfaces
-                  (APIs) that allow different parts of an application to
-                  communicate with each other.
-                </p>
-              </li>
+      <div className={`services__modal ${open ? "active-modal" : ""}`}>
+        <div className="services__modal-content">
+          <h4 className="services__modal-title">
+            Atención <br />
+            de urgencias
+          </h4>
 
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>
-                  Database Management: Designing, implementing, and optimizing
-                  databases to store and retrieve data efficiently.
-                </p>
-              </li>
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>
-                  Business Logic: Implementing the logic behind application
-                  functionalities, ensuring that actions and operations are
-                  carried out properly and consistently.
-                </p>
-              </li>
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>
-                  Authentication and Security: Implementing authentication and
-                  authorization systems to protect data and control access to
-                  different parts of the application.
-                </p>
-              </li>
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>
-                  Performance Optimization: Ensuring that the application runs
-                  efficiently by improving response times and reducing server
-                  load.
-                </p>
-              </li>
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>
-                  Scalability Implementation: Designing the backend architecture
-                  to handle an increase in user volume and workload seamlessly.
-                </p>
-              </li>
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>
-                  Testing: Developing unit and integration tests to ensure
-                  quality and functionality of the application.
-                </p>
-              </li>
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>
-                  Documentation: Creating technical documentation to help other
-                  team members understand and collaborate effectively on the
-                  development.
-                </p>
-              </li>
-            </ul>
-          </div>
+          <i
+            className="fas fa-times services__modal-close"
+            onClick={toggle}
+          ></i>
+
+          <ul className="services__modal-services grid">
+            <li className="services__modal-service">
+              <i className="far fa-check-circle services__modal-icon"></i>
+              <p>
+                Triage clínico y priorización según gravedad, con enfoque
+                resolutivo y seguro.
+              </p>
+            </li>
+
+            <li className="services__modal-service">
+              <i className="far fa-check-circle services__modal-icon"></i>
+              <p>
+                Estabilización inicial y manejo de síntomas agudos: dolor
+                intenso, fiebre persistente, deshidratación, crisis
+                respiratoria, entre otros.
+              </p>
+            </li>
+
+            <li className="services__modal-service">
+              <i className="far fa-check-circle services__modal-icon"></i>
+              <p>
+                Identificación de signos de alarma y decisión de remisión
+                inmediata cuando se requiere mayor complejidad.
+              </p>
+            </li>
+
+            <li className="services__modal-service">
+              <i className="far fa-check-circle services__modal-icon"></i>
+              <p>
+                Valoración integral y conducta médica basada en guías clínicas y
+                criterio profesional.
+              </p>
+            </li>
+
+            <li className="services__modal-service">
+              <i className="far fa-check-circle services__modal-icon"></i>
+              <p>
+                Orientación clara al paciente: indicaciones, cuidados en casa y
+                seguimiento recomendado.
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-// UI/UX SECTION
-const UiUxSection = () => {
-  const [flagUi, setFlagUi] = useState(false);
-  const openModal = () => {
-    setFlagUi(!flagUi);
-  };
+/* ==================== 3) APS / RURAL ==================== */
+const APS_Rural = () => {
+  const [open, setOpen] = useState(false);
+  const toggle = () => setOpen((prev) => !prev);
+
   return (
-    <>
-      <div className="services__content">
-        <i className="far fa-window-restore services__icon"></i>
-        <h3 className="services__title">
-          Ui/Ux <br />
-          Designer
-        </h3>
+    <div className="services__content">
+      <i className="fas fa-house-user services__icon"></i>
 
-        <span
-          className="button button--flex button--small button--link services__button"
-          onClick={openModal}
-        >
-          View More
-          <i className="fas fa-arrow-right button__icon"></i>
-        </span>
+      <h3 className="services__title">
+        APS y <br />
+        atención rural
+      </h3>
 
-        <div className={`services__modal ${flagUi && "active-modal"}`}>
-          <div className="services__modal-content">
-            <h4 className="services__modal-title">
-              Ui/Ux <br />
-              Designer
-            </h4>
-            <i
-              className="fas fa-times services__modal-close"
-              onClick={openModal}
-            ></i>
+      <span
+        className="button button--flex button--small button--link services__button"
+        onClick={toggle}
+      >
+        Ver más
+        <i className="fas fa-arrow-right button__icon"></i>
+      </span>
 
-            <ul className="services__modal-services grid">
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>I design the user interface.</p>
-              </li>
+      <div className={`services__modal ${open ? "active-modal" : ""}`}>
+        <div className="services__modal-content">
+          <h4 className="services__modal-title">
+            APS y <br />
+            atención rural
+          </h4>
 
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>I create your design system.</p>
-              </li>
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>I create ux element interactions.</p>
-              </li>
-              <li className="services__modal-service">
-                <i className="far fa-check-circle services__modal-icon"></i>
-                <p>With an attractive, peculiar and original view.</p>
-              </li>
-            </ul>
-          </div>
+          <i
+            className="fas fa-times services__modal-close"
+            onClick={toggle}
+          ></i>
+
+          <ul className="services__modal-services grid">
+            <li className="services__modal-service">
+              <i className="far fa-check-circle services__modal-icon"></i>
+              <p>
+                Consulta extramural y atención en territorio según riesgo,
+                priorizando población vulnerable.
+              </p>
+            </li>
+
+            <li className="services__modal-service">
+              <i className="far fa-check-circle services__modal-icon"></i>
+              <p>
+                Visitas domiciliarias: seguimiento clínico, adherencia a
+                tratamiento y educación en salud.
+              </p>
+            </li>
+
+            <li className="services__modal-service">
+              <i className="far fa-check-circle services__modal-icon"></i>
+              <p>
+                Tamizajes poblacionales, detección temprana y control de riesgos
+                en salud.
+              </p>
+            </li>
+
+            <li className="services__modal-service">
+              <i className="far fa-check-circle services__modal-icon"></i>
+              <p>
+                Manejo y seguimiento de enfermedades crónicas: hipertensión,
+                diabetes y otras condiciones prevalentes.
+              </p>
+            </li>
+
+            <li className="services__modal-service">
+              <i className="far fa-check-circle services__modal-icon"></i>
+              <p>
+                Articulación con equipo interdisciplinario y redes de servicios
+                para continuidad y remisión oportuna.
+              </p>
+            </li>
+
+            <li className="services__modal-service">
+              <i className="far fa-check-circle services__modal-icon"></i>
+              <p>
+                Registro clínico e informes en sistemas de información según
+                lineamientos institucionales.
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 };

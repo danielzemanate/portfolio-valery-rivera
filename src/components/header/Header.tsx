@@ -45,12 +45,12 @@ export const Header = () => {
   };
 
   const navItems = [
-    { text: "Home", icon: "fas fa-home", target: "home" },
-    { text: "About", icon: "far fa-user", target: "about" },
-    { text: "Skills", icon: "far fa-file-code", target: "skills" },
-    { text: "Services", icon: "fas fa-briefcase", target: "services" },
+    { text: "Inicio", icon: "fas fa-home", target: "home" },
+    { text: "Acerca de Mi", icon: "far fa-user", target: "about" },
+    { text: "Habilidades", icon: "far fa-file-code", target: "skills" },
+    { text: "Servicios", icon: "fas fa-briefcase", target: "services" },
     // { text: "Portfolio", icon: "fas fa-suitcase", target: "portfolio" },
-    { text: "Contact", icon: "fab fa-telegram-plane", target: "contact" },
+    { text: "Contacto", icon: "fab fa-telegram-plane", target: "contact" },
   ];
 
   return (
@@ -58,13 +58,13 @@ export const Header = () => {
       {/* HEADER */}
       <header className={headerClass} id="header">
         <nav className="nav container">
-          <i className="fas fa-code home__social-icon" />
+          <i className="fas fa-user-md home__social-icon" />
           <a
-            href="https://danielzemanate.netlify.app/"
+            href="https://dra.valeryrivera.netlify.app/"
             className="nav__logo"
             style={{ fontSize: 17 }}
           >
-            Daniel Zemanate
+            Dra. Valery J. Rivera L.
           </a>
 
           <article

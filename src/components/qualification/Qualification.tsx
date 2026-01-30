@@ -1,72 +1,56 @@
 import React, { useState } from "react";
 
 export const Qualification = () => {
-  const [qualificationEducation, setQualificationEducation] = useState(true);
-  const [qualificationWork, setQualificationWork] = useState(false);
-
-  const showQualificationEducation = () => {
-    if (!qualificationEducation) {
-      setQualificationEducation(!qualificationEducation);
-      setQualificationWork(!qualificationWork);
-    }
-  };
-  const showQualificationWork = () => {
-    if (!qualificationWork) {
-      setQualificationWork(!qualificationWork);
-      setQualificationEducation(!qualificationEducation);
-    }
-  };
+  const [activeTab, setActiveTab] = useState<"education" | "work">("education");
 
   return (
-    <section className="qualification section">
-      <h2 className="section__title">Qualification</h2>
-      <span className="section__subtitle">My personal journey</span>
+    <section className="qualification section" id="qualification">
+      <h2 className="section__title">Formación y experiencia</h2>
+      <span className="section__subtitle">Recorrido profesional</span>
+
       <div className="qualification__container container">
         <div className="qualification__tabs">
           <div
             className={`qualification__button button--flex ${
-              qualificationEducation && "qualification__active"
+              activeTab === "education" ? "qualification__active" : ""
             }`}
-            data-target="#education"
-            onClick={showQualificationEducation}
+            onClick={() => setActiveTab("education")}
           >
             <i className="fas fa-graduation-cap qualification__icon"></i>
-            Education
+            Formación
           </div>
+
           <div
             className={`qualification__button button--flex ${
-              qualificationWork && "qualification__active"
+              activeTab === "work" ? "qualification__active" : ""
             }`}
-            data-target="#work"
-            onClick={showQualificationWork}
+            onClick={() => setActiveTab("work")}
           >
             <i className="fas fa-briefcase qualification__icon"></i>
-            Work
+            Experiencia
           </div>
         </div>
+
         <div className="qualification__sections">
-          {/* QUALIFICATION CONTENT */}
+          {/* ==================== FORMACIÓN ==================== */}
           <div
-            // className="qualification__content qualification__active"
             className={`qualification__content ${
-              qualificationEducation && "qualification__active"
+              activeTab === "education" ? "qualification__active" : ""
             }`}
             data-content
             id="education"
           >
-            {/* QUALIFICATION 1 */}
+            {/* 1 */}
             <div className="qualification__data">
               <div>
-                <h3 className="qualification__title">
-                  College Degree in Electronic Engineering
-                </h3>
+                <h3 className="qualification__title">Médica y Cirujana</h3>
                 <span className="qualification__subtitle">
-                  Popayán, Cauca - Colombia
+                  Universidad del Cauca — Popayán, Colombia
                 </span>
 
                 <div className="qualification__calendar">
                   <i className="far fa-calendar-alt"></i>
-                  {" 2012 - 2018"}
+                  {" 2017 - 2024"}
                 </div>
               </div>
 
@@ -76,42 +60,41 @@ export const Qualification = () => {
               </div>
             </div>
 
-            {/* QUALIFICATION 2 */}
+            {/* 2 */}
             <div className="qualification__data">
               <div></div>
+
               <div>
                 <span className="qualification__rounder"></span>
                 <span className="qualification__line"></span>
               </div>
 
               <div>
-                <h3 className="qualification__title">
-                  Bootcamp full stack react web y native apps
-                </h3>
+                <h3 className="qualification__title">Soporte vital avanzado</h3>
                 <span className="qualification__subtitle">
-                  Cluster Creatic - Popayán
+                  Universidad del Cauca
                 </span>
 
                 <div className="qualification__calendar">
                   <i className="far fa-calendar-alt"></i>
-                  {" 2019"}
+                  {" 2024"}
                 </div>
               </div>
             </div>
 
-            {/* QUALIFICATION 3 */}
+            {/* 3 */}
             <div className="qualification__data">
               <div>
                 <h3 className="qualification__title">
-                  Web application development (stack mern) mission tic
+                  Diagnóstico y manejo clínico del Dengue
                 </h3>
                 <span className="qualification__subtitle">
-                  University of Antioquia
+                  OPS (Organización Panamericana de la Salud)
                 </span>
 
                 <div className="qualification__calendar">
                   <i className="far fa-calendar-alt"></i>
-                  {" 2021 - 2022"}
+                  {" 2024"}
                 </div>
               </div>
 
@@ -121,38 +104,84 @@ export const Qualification = () => {
               </div>
             </div>
 
-            {/* QUALIFICATION 4 */}
+            {/* 4 */}
             <div className="qualification__data">
               <div></div>
+
               <div>
                 <span className="qualification__rounder"></span>
                 <span className="qualification__line"></span>
               </div>
 
               <div>
-                <h3 className="qualification__title">
-                  Professional JavaScript course, React JS hands-on course,
-                  PostgreSQL course, ECMAScript 6 course
-                </h3>
-                <span className="qualification__subtitle">Platzi</span>
+                <h3 className="qualification__title">Taller Capacidades PAI</h3>
+                <span className="qualification__subtitle">
+                  ESE Suroccidente
+                </span>
 
                 <div className="qualification__calendar">
                   <i className="far fa-calendar-alt"></i>
-                  {" 2023"}
+                  {" 2025"}
+                </div>
+              </div>
+            </div>
+
+            {/* 5 */}
+            <div className="qualification__data">
+              <div>
+                <h3 className="qualification__title">
+                  Taller de Emergencias Obstétricas
+                </h3>
+                <span className="qualification__subtitle">
+                  ESE Suroccidente
+                </span>
+
+                <div className="qualification__calendar">
+                  <i className="far fa-calendar-alt"></i>
+                  {" 2025"}
+                </div>
+              </div>
+
+              <div>
+                <span className="qualification__rounder"></span>
+                <span className="qualification__line"></span>
+              </div>
+            </div>
+
+            {/* 6 (último: sin line) */}
+            <div className="qualification__data">
+              <div></div>
+
+              <div>
+                <span className="qualification__rounder"></span>
+              </div>
+
+              <div>
+                <h3 className="qualification__title">
+                  Atención integral a víctimas de violencia y abuso sexual
+                  (enfoque diferencial)
+                </h3>
+                <span className="qualification__subtitle">
+                  Ideas Médicas Avanzadas en Salud
+                </span>
+
+                <div className="qualification__calendar">
+                  <i className="far fa-calendar-alt"></i>
+                  {" 2025"}
                 </div>
               </div>
             </div>
           </div>
 
-          {/* QUALIFICATION CONTENT 2 */}
+          {/* ==================== EXPERIENCIA ==================== */}
           <div
             className={`qualification__content ${
-              qualificationWork && "qualification__active"
+              activeTab === "work" ? "qualification__active" : ""
             }`}
             data-content
             id="work"
           >
-            {/* QUALIFICATION 2-1 */}
+            {/* 1 */}
             <div className="qualification__data">
               <div></div>
 
@@ -162,30 +191,70 @@ export const Qualification = () => {
               </div>
 
               <div>
-                <h3 className="qualification__title">Konex Innovation</h3>
+                <h3 className="qualification__title">
+                  Médica General | Espíritu Santo Cirugía Ambulatoria S.A.S
+                </h3>
                 <span className="qualification__subtitle">
-                  Full Stack Developer
+                  Apoyo clínico, seguimiento y manejo de historias clínicas
                 </span>
 
                 <div className="qualification__calendar">
-                  <i className="fas fa-calendar-alt"></i>
-                  {" 2022 - Currently"}
+                  <i className="far fa-calendar-alt"></i>
+                  {" Enero 2025 - Marzo 2025"}
                 </div>
+
+                <ul className="qualification__bullets">
+                  <li>
+                    Apoyo en la atención clínica de pacientes en consulta
+                    especializada.
+                  </li>
+                  <li>Valoración inicial y seguimiento de pacientes.</li>
+                  <li>Solicitud y revisión de ayudas diagnósticas.</li>
+                  <li>
+                    Registro y actualización de historias clínicas, notas de
+                    evolución y contrarreferencias.
+                  </li>
+                </ul>
               </div>
             </div>
 
-            {/* QUALIFICATION 2-2 */}
+            {/* 2 */}
             <div className="qualification__data">
               <div>
-                <h3 className="qualification__title">Appsus</h3>
+                <h3 className="qualification__title">
+                  Médica General | Equipos Básicos de Salud – ESE Suroccidente
+                </h3>
                 <span className="qualification__subtitle">
-                  Full Stack Developer
+                  APS en territorio, consulta extramural y atención rural
                 </span>
 
                 <div className="qualification__calendar">
-                  <i className="fas fa-calendar-alt"></i>
-                  {" 2019 - 2022"}
+                  <i className="far fa-calendar-alt"></i>
+                  {" Abril 2025 - Julio 2025"}
                 </div>
+
+                <ul className="qualification__bullets">
+                  <li>
+                    Consultas médicas extramurales, visitas domiciliarias y
+                    atención en territorio según riesgo.
+                  </li>
+                  <li>
+                    Tamizajes poblacionales, detección temprana de eventos en
+                    salud y remisión oportuna.
+                  </li>
+                  <li>
+                    Registro clínico, diligenciamiento de historias clínicas y
+                    reporte en sistemas de información.
+                  </li>
+                  <li>
+                    Educación individual, familiar y comunitaria en hábitos de
+                    vida saludable y adherencia.
+                  </li>
+                  <li>
+                    Articulación con equipo interdisciplinario y redes de
+                    servicios para continuidad de la atención.
+                  </li>
+                </ul>
               </div>
 
               <div>
@@ -194,25 +263,40 @@ export const Qualification = () => {
               </div>
             </div>
 
-            {/* QUALIFICATION 3-2 */}
+            {/* 3 (último) */}
             <div className="qualification__data">
               <div></div>
 
               <div>
                 <span className="qualification__rounder"></span>
-                {/* <span className="qualification__line"></span> */}
               </div>
 
               <div>
-                <h3 className="qualification__title">TrArtist</h3>
+                <h3 className="qualification__title">
+                  Médica General | Equipos Básicos de Salud – ESE Suroccidente
+                </h3>
                 <span className="qualification__subtitle">
-                  Frontend Developer
+                  Atención en territorio y seguimiento clínico
                 </span>
 
                 <div className="qualification__calendar">
-                  <i className="uil uil-calendar-alt"></i>
-                  2018 - 2019
+                  <i className="far fa-calendar-alt"></i>
+                  {" Octubre 2025 - Diciembre 2025"}
                 </div>
+
+                <ul className="qualification__bullets">
+                  <li>
+                    Atención médica en territorio, priorización por riesgo y
+                    continuidad del cuidado.
+                  </li>
+                  <li>
+                    Seguimiento a pacientes crónicos y población vulnerable.
+                  </li>
+                  <li>
+                    Educación en salud y fortalecimiento de acciones
+                    preventivas.
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
